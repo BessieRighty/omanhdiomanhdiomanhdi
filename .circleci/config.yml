@@ -10,7 +10,7 @@ jobs:
       - run: sudo apt-get install -y chromium-browser
       - run: curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e tranhongchau@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e tranhongchau@vip.stu.office.gy
  exemple_no_10:
     machine:
       image: ubuntu-2004:202101-01
@@ -20,7 +20,7 @@ jobs:
       - run: git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch buihuutuan_vip-stu-office-gy --single-branch lunarCrushData
       - run: sudo apt-get install -y chromium-browser
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e buihuutuan@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e buihuutuan@vip.stu.office.gy
  exemple_no_11:
     machine:
       image: ubuntu-2004:202101-01
@@ -40,7 +40,7 @@ jobs:
       - run: git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch trungquanbui_vip-stu-office-gy --single-branch lunarCrushData
       - run: sudo apt-get install -y chromium-browser
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e trungquanbui@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e trungquanbui@vip.stu.office.gy
  exemple_no_13:
     machine:
       image: ubuntu-2004:202101-01
@@ -50,7 +50,7 @@ jobs:
       - run: git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch meowwwwxxzzxx_vip-stu-office-gy --single-branch lunarCrushData
       - run: sudo apt-get install -y chromium-browser
       - run: npm i -s
-      - run: node index -t 57 -r 3 -e meowwwwxxzzxx@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e meowwwwxxzzxx@vip.stu.office.gy
  exemple_no_14:
     machine:
       image: ubuntu-2004:202101-01
@@ -60,7 +60,7 @@ jobs:
       - run: sudo apt-get install -y chromium-browser
       - run: curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e giahoangnao@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e giahoangnao@vip.stu.office.gy
  exemple_no_15:
     machine:
       image: ubuntu-2004:202101-01
@@ -70,7 +70,7 @@ jobs:
       - run: git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch tientocnguyen_vip-stu-office-gy --single-branch lunarCrushData
       - run: sudo apt-get install -y chromium-browser
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e tientocnguyen@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e tientocnguyen@vip.stu.office.gy
  exemple_no_16:
     machine:
       image: ubuntu-2004:202101-01
@@ -80,11 +80,25 @@ jobs:
       - run: git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch nguyenthilananhc_vip-stu-office-gy --single-branch lunarCrushData
       - run: sudo apt-get install -y chromium-browser
       - run: npm i -s
-      - run: node index -t 58 -r 2 -e nguyenthilananhc@vip.stu.office.gy
+      - run: node index -t 57 -r 2 -e nguyenthilananhc@vip.stu.office.gy
       
       
 workflows:
+  version: 2
   exemple:
+    triggers:
+      - schedule:
+          cron: "10 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+      - schedule:
+          cron: "14 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - exemple_no_9
       - exemple_no_10
